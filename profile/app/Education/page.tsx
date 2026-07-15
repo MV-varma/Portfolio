@@ -66,32 +66,32 @@ export default function Education() {
           </div>
 
           <div className="order-1 lg:order-2 w-full overflow-hidden relative group">
-            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 no-scrollbar [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden ">
+            <div className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pb-4 no-scrollbar [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden ">
               {degreeImg.map((img) => (
                 <div
                   key={img.id}
-                  className={`min-w-5 md:min-w-[320px] h-55 rounded-2xl snap-center shrink-0 border border-purple-500/20 bg-linear-to-r ${img.color} backdrop-blur-sm flex items-center justify-center relative overflow-hidden transition-all hover:border-purple-500/50 `}
+                  className={` w-[85vw] sm:w-70 md:w-[320px] h-60 flex-none rounded-2xl snap-center shrink-0 border border-purple-500/20 bg-linear-to-r ${img.color} backdrop-blur-sm flex items-center justify-center relative overflow-hidden transition-all shadow-lg hover:border-purple-500/50 `}
                 >
                   <img
                   src={img.src}
                   alt={img.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay">
+                  className="absolute inset-0 w-full h-full object-cover object-center opacity-60 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay">
                   </img>
                 </div>
               ))}
             </div>
             <div className="absolute top-0 right-0 h-full w-12 bg-linear-to-l from-black to-transparent pointer-events-none"></div>
-            <div className="absolute top-0 left-0 h-full w-12 bg-linear-to-r from-black to-transparent pointer-events-none md:hidden"></div>
+            <div className="absolute top-0 left-0 h-full w-12 bg-linear-to-r from-black to-transparent pointer-events-none lg:hidden z-10"></div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="order-1 lg:order-1 w-full overflow-hidden relative group">
-            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 no-scrollbar [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden">
+            <div className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pb-4 no-scrollbar [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden">
               {HscImg.map((img) => (
                 <div
                   key={img.id}
-                  className={`min-w-5 md:min-w-[320px] h-55 rounded-2xl snap-center shrink-0 border border-gray-700 bg-linear-to-r ${img.color} backdrop-blur-sm flex items-center justify-center relative overflow-hidden transition-all hover:border-gray-500 `}
+                  className={`w-[85vw] sm:w-70 md:w-[320px] h-55 flex-none rounded-2xl snap-center shrink-0 border border-gray-700 bg-linear-to-r ${img.color} backdrop-blur-sm flex items-center justify-center relative overflow-hidden transition-all shadow-lg hover:border-gray-500 `}
                 >
                   <img
                   src={img.src}
