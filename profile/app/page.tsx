@@ -1,10 +1,9 @@
-import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Skills from './pages/Skills'
-import Projects from './pages/Projects'
-import Contact from './pages/Contact'
-import Education from './pages/Education'
+import Skills from './Skills/page'
+import Projects from './Projects/page'
+import Contact from './Contact/page'
+import Education from './Education/page'
 import Tail from './components/Tail'
 
 
