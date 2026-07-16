@@ -9,7 +9,7 @@ import Tail from './components/Tail'
 
 const page = () => {
   return (
-    <div className="flex min-h-screen flex-col container mx-auto px-4 py-4">
+    <div className="flex min-h-screen flex-col bg-black container mx-auto px-4 py-4">
      <Navbar />
      <Hero />
      <Skills />

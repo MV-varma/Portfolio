@@ -5,7 +5,7 @@ import { IoMail } from 'react-icons/io5'
 
 const Tail = () => {
   return (
-    <footer className='flex flex-col relative align-bottom self-center justify-between gap-4 p-4'>
+    <footer className='flex flex-col relative align-bottom bg-black self-center justify-between gap-4 p-4'>
         <div className="flex gap-4 justify-center ">
 
             <a 
