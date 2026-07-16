@@ -19,20 +19,24 @@ export default function Education() {
   const degreescrollRef = useRef<HTMLDivElement>(null)
   const hscscrollRef = useRef<HTMLDivElement>(null)
 
+  const degreeDir = useRef(1)
+  const hscDir = useRef(1)
+
   useEffect(()=>{
     const scrollInterval = setInterval(()=>{
-      const scrollContainer = (ref: React.RefObject<HTMLDivElement | null>)=>{
+      const scrollContainer = (ref: React.RefObject<HTMLDivElement | null>, dirRef: {current:number})=>{
         if (ref.current){
           const {scrollLeft, scrollWidth, clientWidth} = ref.current
-          if(scrollLeft + clientWidth >= scrollWidth-5){
-            ref.current.scrollTo({left:0, behavior:'smooth'})
-          }else{
-            ref.current.scrollBy({left:300, behavior:'smooth'})
+          if(scrollLeft + clientWidth >= scrollWidth- 10){
+            dirRef.current=-1
+          }else if(scrollLeft <= 5){
+            dirRef.current=1
           }
+          ref.current.scrollBy({left:200*dirRef.current,behavior:'smooth'})
         }
       }
-      scrollContainer(degreescrollRef)
-      scrollContainer(hscscrollRef)
+      scrollContainer(degreescrollRef,degreeDir)
+      scrollContainer(hscscrollRef,hscDir)
     },3000)
     return()=>clearInterval(scrollInterval)
   },[])
