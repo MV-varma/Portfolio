@@ -31,7 +31,7 @@ const Hero = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-purple-600/20 blur-[100px] rounded-full pointer-events-none" />
           
           <TiltCard  
-            imageSrc="/images/temp.jpg"
+            imageSrc="/images/hes.jpeg"
             title="MV Varma"
             description="Web Developer | Blue Team | Next.js | Tailwind CSS"
             className="h-full w-full relative z-20"

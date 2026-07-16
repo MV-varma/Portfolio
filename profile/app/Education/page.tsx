@@ -1,4 +1,7 @@
+'use client'
 import { FaGraduationCap, FaSchool, FaCalendarAlt, FaMapMarkerAlt, } from "react-icons/fa";
+import {useEffect, useRef} from "react"
+
 
 export default function Education() {
   const degreeImg = [
@@ -12,6 +15,28 @@ export default function Education() {
     { id: 2, title: "Image2", color: "from-purple-900/40 to-indigo-900/40", src:"/images/jc2.jpg" },
     { id: 3, title: "Image3", color: "from-purple-900/40 to-indigo-900/40", src:"/images/prism.jpg" },
   ];
+
+  const degreescrollRef = useRef<HTMLDivElement>(null)
+  const hscscrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(()=>{
+    const scrollInterval = setInterval(()=>{
+      const scrollContainer = (ref: React.RefObject<HTMLDivElement | null>)=>{
+        if (ref.current){
+          const {scrollLeft, scrollWidth, clientWidth} = ref.current
+          if(scrollLeft + clientWidth >= scrollWidth-5){
+            ref.current.scrollTo({left:0, behavior:'smooth'})
+          }else{
+            ref.current.scrollBy({left:300, behavior:'smooth'})
+          }
+        }
+      }
+      scrollContainer(degreescrollRef)
+      scrollContainer(hscscrollRef)
+    },3000)
+    return()=>clearInterval(scrollInterval)
+  },[])
+
 
   return (
     <section id="Education" className="py-20 bg-black text-white px-6">
@@ -66,7 +91,9 @@ export default function Education() {
           </div>
 
           <div className="order-1 lg:order-2 w-full overflow-hidden relative group">
-            <div className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pb-4 no-scrollbar [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden ">
+            <div 
+            ref={degreescrollRef}
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pb-4 no-scrollbar [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden ">
               {degreeImg.map((img) => (
                 <div
                   key={img.id}
@@ -87,7 +114,9 @@ export default function Education() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="order-1 lg:order-1 w-full overflow-hidden relative group">
-            <div className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pb-4 no-scrollbar [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden">
+            <div 
+            ref={hscscrollRef}
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pb-4 no-scrollbar [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden">
               {HscImg.map((img) => (
                 <div
                   key={img.id}
